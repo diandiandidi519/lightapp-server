@@ -32,15 +32,15 @@ jobs:
               run: |
                   ssh work@59.110.140.36 "
                     # 【注意】用 work 账号登录，手动创建 /home/work/lego 目录
-                    # 然后 git clone https://github.com/diandiandidi519/lightapp-server -b master （私有仓库，使用 github 用户名和密码）
+                    # 然后 git clone https://github.com/diandiandidi519/lightapp-server.git -b master （私有仓库，使用 github 用户名和密码）
                     # 记得删除 origin ，否则会暴露 github 密码
                     cd /home/work/lightapp/lightapp-server;
-                    git remote add origin https://github.com/diandiandidi519/lightapp-server;
+                    git remote add origin https://github.com/diandiandidi519/lightapp-server.git;
                     # git checkout master;
                     git pull origin master; # 重新下载最新代码
                     git remote remove origin; # 删除 origin ，否则会暴露 github 密码
                     # 启动 docker
-                    docker-compose build editor-server; 和 docker-compose.yml service 名字一致
+                    docker-compose build lightapp-server; 和 docker-compose.yml service 名字一致
                     docker-compose up -d;
                   "
             - name: delete ssh key # 删除 ssh key
