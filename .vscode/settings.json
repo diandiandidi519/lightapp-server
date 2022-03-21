@@ -1,0 +1,22 @@
+{
+    "editor.formatOnSave": true,
+    "cSpell.words": ["aliyun", "lightapp"],
+    "vetur.format.options.tabSize": 4,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "[json]": {
+        "editor.tabSize": 4,
+        "editor.formatOnType": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.tabSize": 2,
+        "editor.formatOnType": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true
+    },
+    "prettier.tabWidth": 4
+}

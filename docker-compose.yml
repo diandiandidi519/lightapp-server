@@ -1,0 +1,10 @@
+version: '3'
+services:
+    lightapp-server:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: lightapp-server # 依赖于当前 Dockerfile 创建镜像
+        container_name: lightapp-server
+        ports:
+            - 8080:3000 # 宿主机通过 8080 访问
