@@ -6,4 +6,4 @@ COPY . /app
 # 设置时区
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
-CMD npm i && npm run prd-dev && npx pm2 log
+CMD npm i && npm i -g pm2 && npm run prd-dev && npx pm2 log
