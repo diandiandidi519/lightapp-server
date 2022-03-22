@@ -27,10 +27,10 @@ jobs:
                   mkdir -p ~/.ssh/
                   echo "${{secrets.WFP_ID_RSA}}" > ~/.ssh/id_rsa # secret 在这里配置 https://github.com/diandiandidi519/lightapp-server/settings/secrets
                   chmod 600 ~/.ssh/id_rsa
-                  ssh-keyscan "59.110.140.36" >> ~/.ssh/known_hosts
+                  ssh-keyscan "${{ secrets.WFP_IP }}" >> ~/.ssh/known_hosts
             - name: deploy # 部署
               run: |
-                  ssh work@59.110.140.36 "
+                  ssh ${{ secrets.WFP_USER }}@${{ secrets.WFP_IP }} "
                     # 【注意】用 work 账号登录，手动创建 /home/work/lightapp 目录
                     # 然后 git clone https://github.com/diandiandidi519/lightapp-server.git -b master （私有仓库，使用 github 用户名和密码）
                     # 记得删除 origin ，否则会暴露 github 密码
