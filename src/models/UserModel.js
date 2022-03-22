@@ -5,8 +5,6 @@
 
 const seq = require('../db/seq/seq')
 const { STRING, DATE, BOOLEAN, ENUM } = require('../db/seq/types')
-const RoleUserModel = require('./RoleUserModel')
-const RoleModel = require('./RoleModel')
 
 const User = seq.define('user', {
     username: {
@@ -63,6 +61,4 @@ const User = seq.define('user', {
         comment: '状态：0-删除，1-正常',
     },
 })
-User.belongsToMany(RoleModel, { through: 'role_user', foreignKey: 'user_id' })
-RoleModel.belongsToMany(User, { through: 'role_user', foreignKey: 'role_id' })
 module.exports = User

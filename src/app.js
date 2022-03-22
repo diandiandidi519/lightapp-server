@@ -12,6 +12,7 @@ const jwt = require('./middlewares/jwt')
 const { onerror, onNotFound } = require('./middlewares/error')
 const { isTest } = require('./utils/env')
 const { mailAlarm } = require('./alarm/index')
+require('./models/assocations')
 
 // 路由
 const index = require('./routes/index')
@@ -52,7 +53,6 @@ app.use(
         extension: 'pug',
     })
 )
-
 
 // routes
 app.use(index.routes(), index.allowedMethods())

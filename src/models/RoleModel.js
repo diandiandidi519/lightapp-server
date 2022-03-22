@@ -5,8 +5,6 @@
 
 const seq = require('../db/seq/seq')
 const { STRING, INTEGER, ENUM } = require('../db/seq/types')
-const RoleUserModel = require('./RoleUserModel')
-const UserModel = require('./UserModel')
 
 const Role = seq.define('role', {
     rolename: {
@@ -29,6 +27,4 @@ const Role = seq.define('role', {
         comment: '描述',
     },
 })
-
-// Role.hasMany(RoleUserModel, { foreignKey: 'role_id' })
 module.exports = Role

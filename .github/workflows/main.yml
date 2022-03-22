@@ -31,7 +31,7 @@ jobs:
             - name: deploy # 部署
               run: |
                   ssh work@59.110.140.36 "
-                    # 【注意】用 work 账号登录，手动创建 /home/work/lego 目录
+                    # 【注意】用 work 账号登录，手动创建 /home/work/lightapp 目录
                     # 然后 git clone https://github.com/diandiandidi519/lightapp-server.git -b master （私有仓库，使用 github 用户名和密码）
                     # 记得删除 origin ，否则会暴露 github 密码
                     cd /home/work/lightapp/lightapp-server;
