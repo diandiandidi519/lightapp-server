@@ -17,7 +17,7 @@ on:
             - 'bin/*'
 
 jobs:
-    deploy-dev:
+    deploy:
         runs-on: ubuntu-latest
 
         steps:
